@@ -35,7 +35,7 @@ object Form1: TForm1
     Caption = 'hasil'
   end
   object btn1: TButton
-    Left = 288
+    Left = 304
     Top = 72
     Width = 75
     Height = 57
@@ -44,7 +44,7 @@ object Form1: TForm1
     OnClick = btn1Click
   end
   object btn2: TButton
-    Left = 288
+    Left = 304
     Top = 152
     Width = 75
     Height = 57
