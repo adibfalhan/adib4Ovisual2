@@ -1,9 +1,9 @@
 object Form1: TForm1
-  Left = 813
-  Top = 262
-  Width = 928
+  Left = 1048
+  Top = 338
+  Width = 880
   Height = 615
-  Caption = 'Form1'
+  Caption = 'MENAMPILKAN DATA DIGRAFIK DAN STINGRID'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -38,8 +38,8 @@ object Form1: TForm1
   object StringGrid1: TStringGrid
     Left = 464
     Top = 48
-    Width = 320
-    Height = 120
+    Width = 345
+    Height = 129
     TabOrder = 0
   end
   object ComboBox1: TComboBox
@@ -60,33 +60,24 @@ object Form1: TForm1
   object ComboBox2: TComboBox
     Left = 176
     Top = 136
-    Width = 145
+    Width = 121
     Height = 21
     ItemHeight = 13
     TabOrder = 3
   end
   object Button1: TButton
-    Left = 88
+    Left = 72
     Top = 184
-    Width = 75
+    Width = 89
     Height = 25
     Caption = 'ADD DATA'
     TabOrder = 4
     OnClick = Button1Click
   end
-  object Button2: TButton
-    Left = 176
-    Top = 184
-    Width = 75
-    Height = 25
-    Caption = 'VIEW GRAFIK'
-    TabOrder = 5
-    OnClick = Button2Click
-  end
   object Chart1: TChart
-    Left = 88
+    Left = 56
     Top = 232
-    Width = 697
+    Width = 729
     Height = 289
     AllowPanning = pmNone
     AllowZoom = False
@@ -103,7 +94,7 @@ object Form1: TForm1
     View3DOptions.Perspective = 0
     View3DOptions.Rotation = 360
     View3DWalls = False
-    TabOrder = 6
+    TabOrder = 5
     object Series1: TPieSeries
       Marks.ArrowLength = 8
       Marks.Visible = True
@@ -115,20 +106,22 @@ object Form1: TForm1
       PieValues.Order = loNone
     end
   end
-  object Button3: TButton
-    Left = 264
+  object btn1: TButton
+    Left = 224
     Top = 184
-    Width = 75
+    Width = 83
     Height = 25
     Caption = 'CLEAR'
-    TabOrder = 7
+    TabOrder = 6
+    OnClick = btn1Click
   end
-  object Button4: TButton
-    Left = 352
+  object btn2: TButton
+    Left = 336
     Top = 184
-    Width = 75
+    Width = 89
     Height = 25
     Caption = 'CLEAR ALL'
-    TabOrder = 8
+    TabOrder = 7
+    OnClick = btn2Click
   end
 end

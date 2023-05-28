@@ -16,14 +16,16 @@ type
     Edit1: TEdit;
     ComboBox2: TComboBox;
     Button1: TButton;
-    Button2: TButton;
     Chart1: TChart;
     Series1: TPieSeries;
-    Button3: TButton;
-    Button4: TButton;
+    btn1: TButton;
+    btn2: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure charadd;
+    procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +61,7 @@ StringGrid1.Cells[0,StringGrid1.RowCount -1] := IntToStr(StringGrid1.RowCount -1
 StringGrid1.Cells[1,StringGrid1.RowCount -1] := edit1.text;
 StringGrid1.Cells[2,StringGrid1.RowCount -1] := ComboBox1.text;
 StringGrid1.Cells[3,StringGrid1.RowCount -1] := ComboBox2.text;
-
+charadd; //procedure
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -69,6 +71,33 @@ begin
   begin
     Chart1.Series[0].Add(StrToFloat(StringGrid1.Cells[1,i]),StringGrid1.Cells[2,i]);
   end;
+end;
+
+procedure TForm1.charadd;  //Chart
+var i:Integer;
+begin
+      Chart1.Series[0].Clear; //membersihkan tampilan char
+      for i:=1 to StringGrid1.RowCount-1 do
+begin
+    Chart1.Series[0].Add(StrToFloat(StringGrid1.Cells[1,i]),StringGrid1.Cells[2,i]);
+ end;
+end;
+
+procedure TForm1.btn1Click(Sender: TObject);
+var a,b:Integer;
+begin
+    a:=StringGrid1.Selection.Bottom - StringGrid1.Selection.Top+1;
+    for b:=StringGrid1.Selection.Bottom +1 to StringGrid1.RowCount-1 do
+    StringGrid1.Rows[b-a]:=StringGrid1.Rows[b];
+    StringGrid1.RowCount:=StringGrid1.RowCount-1;
+    charadd; //procedure
+end;
+
+procedure TForm1.btn2Click(Sender: TObject);
+begin
+StringGrid1.RowCount:= StringGrid1.RowCount-
+MAX_PATH; //hapus isi data stinggrid all
+charadd; //procedure
 end;
 
 end.
